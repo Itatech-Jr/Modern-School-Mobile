@@ -4,9 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../share/colors.dart';
 import 'card_drawer_widget.dart';
 
-Drawer drawerWidget({required BuildContext context}) {
-  List<String> listMenu = ['DIÁRIO DE CLASSE', 'AVALIAÇÕES', 'COMUNICADOS'];
-
+Drawer drawerWidget({required BuildContext context, required List<String> listMenu}) {
   return Drawer(
     backgroundColor: primaryColor,
     child: Column(
