@@ -1,10 +1,10 @@
 class InfoAlunoMaterialEntity {
-  final String materia;
-  final int cargaHoraria;
-  final int faltas;
-  final double mediaGeral;
+  final String matter; // Matéria
+  final int workload; // Carga Horária
+  final int absences; // Faltas
+  final double overallAverage; // Média Geral
   final String status;
-  final List<double> notas;
+  final List<double> grades; // Notas
 
-  InfoAlunoMaterialEntity({required this.materia, required this.cargaHoraria, required this.faltas, required this.mediaGeral, required this.status,required this.notas});
+  InfoAlunoMaterialEntity({required this.matter, required this.workload, required this.absences, required this.overallAverage, required this.status,required this.grades});
 }
