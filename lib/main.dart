@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:modern_school_mobile/app/core/domain/entity/material_entity.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/button_widget.dart';
+import 'package:modern_school_mobile/app/feature/activity/widget/create_activity/form_field_widget.dart';
 import 'app/feature/activity/widget/appbar_widget.dart';
 import 'app/feature/activity/widget/add_floating_action_button_widget.dart';
+import 'app/feature/activity/widget/create_activity/data_entrega_com_horario.dart';
 import 'app/feature/activity/widget/field_widget.dart';
 import 'app/feature/activity/widget/material_card_widget.dart';
 import 'app/feature/activity/widget/title_widget.dart';
@@ -44,7 +46,7 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         drawer: const Drawer(),
         appBar: appbarWidget(),
-
+        body: DataEntregaComHorario(),
       ),
     );
   }

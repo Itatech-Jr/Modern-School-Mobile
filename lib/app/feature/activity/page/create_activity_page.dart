@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:modern_school_mobile/app/feature/activity/page/prof_page_015/data_entrega_com_horario.dart';
-import 'package:modern_school_mobile/app/feature/activity/page/prof_page_015/descricao.dart';
-import 'package:modern_school_mobile/app/feature/activity/page/prof_page_015/envio_de_arquivo.dart';
-import 'package:modern_school_mobile/app/feature/activity/page/prof_page_015/periodo_com_avaliativo.dart';
-import 'package:modern_school_mobile/app/feature/activity/page/prof_page_015/tipo_atividade_e_peso.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/appbar_widget.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/button_widget.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/title_widget.dart';
+import '../widget/create_activity/data_entrega_com_horario.dart';
+import '../widget/create_activity/descricao.dart';
+import '../widget/create_activity/envio_de_arquivo.dart';
+import '../widget/create_activity/periodo_com_avaliativo.dart';
+import '../widget/create_activity/tipo_atividade_e_peso.dart';
 
-class ProfTela015 extends StatelessWidget {
-  const ProfTela015({super.key});
+class CreateActivityPage extends StatelessWidget {
+  const CreateActivityPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,7 @@ class ProfTela015 extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            titleWidget(
-              text: "TURMA 9º ANO A COMPONENTES: MATEMÁTICA",
-            ),
+            titleWidget(text: "TURMA 9º ANO A COMPONENTES: MATEMÁTICA"),
             const DataEntregaComHorario(),
             const TipoAtividadePeso(),
             const PeriodoComAvaliativo(),
@@ -33,7 +31,7 @@ class ProfTela015 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   buttonWidget(text: "Voltar"),
-                  buttonWidget(text: "Confirmar",backgroundColor: Colors.white),
+                  buttonWidget(text: "Confirmar", backgroundColor: Colors.white),
                 ],
               ),
             ),
