@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../../../share/colors.dart';
+import '../styles/colors.dart';
 import 'card_drawer_widget.dart';
 
 Drawer drawerWidget({required BuildContext context, required List<String> listMenu}) {
@@ -29,11 +28,11 @@ Drawer drawerWidget({required BuildContext context, required List<String> listMe
             ),
           ),
         ),
-        SizedBox(height: 50),
+        const SizedBox(height: 50),
         ListView.separated(
           shrinkWrap: true,
           itemBuilder: (context, index) => cardDrawerWidget(context: context, texto: listMenu[index]),
-          separatorBuilder: (context, index) => SizedBox(height: 25),
+          separatorBuilder: (context, index) => const SizedBox(height: 25),
           itemCount: listMenu.length,
         )
       ],

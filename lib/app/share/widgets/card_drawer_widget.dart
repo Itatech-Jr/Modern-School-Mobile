@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 Widget cardDrawerWidget({required BuildContext context, required String texto}) {

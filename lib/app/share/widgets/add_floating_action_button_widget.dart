@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../share/colors.dart';
+import '../styles/colors.dart';
 
 FloatingActionButton addFloatingActionButtonWidget({VoidCallback? onPressed, Color? backgroundColor}) {
   return FloatingActionButton(

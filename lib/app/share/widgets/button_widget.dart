@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../share/button_style.dart';
-import '../../../share/colors.dart';
+import '../styles/button_style.dart';
+import '../styles/colors.dart';
 
 Widget buttonWidget({Color? backgroundColor, String text = ''}) {
   return TextButton(

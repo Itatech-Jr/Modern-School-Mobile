@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:modern_school_mobile/app/core/domain/entity/material_entity.dart';
-import 'package:modern_school_mobile/app/feature/activity/widget/button_widget.dart';
-import 'app/feature/activity/widget/appbar_widget.dart';
-import 'app/feature/activity/widget/add_floating_action_button_widget.dart';
-import 'app/feature/activity/widget/field_widget.dart';
-import 'app/feature/activity/widget/material_card_widget.dart';
-import 'app/feature/activity/widget/title_widget.dart';
+import 'package:modern_school_mobile/app/core/domain/entity/download_material_entity.dart';
+import 'app/share/widgets/appbar_widget.dart';
 
 //arch: https://medium.com/ruangguru/an-introduction-to-flutter-clean-architecture-ae00154001b0
 
@@ -35,8 +30,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  MaterialEntity entity =
-      const MaterialEntity(titulo: 'Estudo do livro “A Moreninha  de  Joaquin Manuel de Macedo” - [21/05/2022]', nomeArquivo: "nome_do_arquivo.pdf", linkArquvo: "", statusAluno: "Presente");
+  DownloadMaterialEntity entity =
+      const DownloadMaterialEntity(titulo: 'Estudo do livro “A Moreninha  de  Joaquin Manuel de Macedo” - [21/05/2022]', nomeArquivo: "nome_do_arquivo.pdf", linkArquvo: "", statusAluno: "Presente");
 
   @override
   Widget build(BuildContext context) {
