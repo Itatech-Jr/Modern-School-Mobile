@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:modern_school_mobile/app/feature/activity/widget/create_activity/form_field_widget.dart';
 import '../../../../share/text_style.dart';
-import '../../widget/field_widget.dart';
 
-class PeriodoComAvaliativo extends StatefulWidget {
-  const PeriodoComAvaliativo({super.key});
+class EvaluationWithPeriod extends StatefulWidget {
+  const EvaluationWithPeriod({super.key});
 
   @override
-  State<PeriodoComAvaliativo> createState() => _PeriodoComAvaliativoState();
+  State<EvaluationWithPeriod> createState() => _EvaluationWithPeriodState();
 }
 
-class _PeriodoComAvaliativoState extends State<PeriodoComAvaliativo> {
+class _EvaluationWithPeriodState extends State<EvaluationWithPeriod> {
   bool checked = false;
   @override
   Widget build(BuildContext context) {
@@ -24,32 +24,23 @@ class _PeriodoComAvaliativoState extends State<PeriodoComAvaliativo> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Periodo:",
-                      style: primaryTextStyle,
+                formFieldWidget(
+                  width: size.width * 0.6,
+                  title: "Período:",
+                  child: TextFormField(
+                    style: primaryTextStyle,
+                    initialValue: "Substituir pelo widget",
+                    decoration: const InputDecoration(
+                      isCollapsed: true,
+                      border: InputBorder.none,
+                      filled: false,
                     ),
-                    const SizedBox(
-                      height: 7,
-                    ),
-                    fieldWidget(
-                      width: size.width * 0.6,
-                      child: TextFormField(
-                        style: primaryTextStyle,
-                        initialValue: "Substituir pelo widget",
-                        decoration: const InputDecoration(
-                          border: InputBorder.none,
-                          isDense: true,
-                          isCollapsed: true,
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-                const SizedBox(width: 10,),
-                SizedBox(      
+                const SizedBox(
+                  width: 10,
+                ),
+                SizedBox(
                   width: size.width * 0.25,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,7 +65,7 @@ class _PeriodoComAvaliativoState extends State<PeriodoComAvaliativo> {
                                 setState(() {
                                   checked = value!;
                                 });
-                              }
+                              },
                             ),
                           ),
                         ],
