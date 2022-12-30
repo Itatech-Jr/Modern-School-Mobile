@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../../share/colors.dart';
+import '../styles/colors.dart';
+
 
 AppBar appbarWidget() {
   return AppBar(
     actions: [
       Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: const [
           Text(
             "Aluno",
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),

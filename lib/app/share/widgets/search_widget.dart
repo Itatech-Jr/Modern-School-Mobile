@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modern_school_mobile/app/share/colors.dart';
+import '../styles/colors.dart';
 
 class SearchWidget extends StatefulWidget {
   final List<String> lista;

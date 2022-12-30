@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/domain/entity/info_aluno_materia_entity.dart';
-import '../../../share/card_style.dart';
+import '../../../share/styles/card_style.dart';
 
 Widget cardMateriaWidget({required InfoAlunoMaterialEntity infoAlunMat}) {
   return Column(
@@ -55,10 +55,10 @@ Widget cardMateriaWidget({required InfoAlunoMaterialEntity infoAlunMat}) {
                         style: cardAlunoTextStyle.copyWith(fontWeight: FontWeight.bold),
                       ),
                       Container(
-                        padding: EdgeInsets.all(8),
-                        margin: EdgeInsets.only(top: 5, left: 5, right: 5),
-                        decoration: BoxDecoration(color: Colors.green, borderRadius: BorderRadius.all(Radius.circular(5))),
-                        child: Text(n.toString().replaceAll('.', ','), style: TextStyle(fontFamily: 'Roboto', color: Colors.white)),
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.only(top: 5, left: 5, right: 5),
+                        decoration: const BoxDecoration(color: Colors.green, borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Text(n.toString().replaceAll('.', ','), style: const TextStyle(fontFamily: 'Roboto', color: Colors.white)),
                       )
                     ],
                   );

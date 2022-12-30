@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:modern_school_mobile/app/core/domain/entity/material_entity.dart';
-import 'package:modern_school_mobile/app/share/colors.dart';
-import '../../../share/card_style.dart';
+import 'package:modern_school_mobile/app/core/domain/entity/download_material_entity.dart';
+import '../styles/card_style.dart';
+import '../styles/colors.dart';
 
-Widget materialCardWidget({required MaterialEntity entity}) {
+Widget downloadMaterialCardWidget({required DownloadMaterialEntity entity}) {
   return Card(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
     elevation: 3,

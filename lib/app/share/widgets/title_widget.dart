@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../share/text_style.dart';
+import '../styles/text_style.dart';
 
 Widget titleWidget({String text = '', Color? backgroundColor}) {
   return Container(

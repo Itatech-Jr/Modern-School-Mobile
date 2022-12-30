@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
-
 TextStyle primaryTextStyle = const TextStyle(
   color: Colors.black,
   fontSize: 16,
