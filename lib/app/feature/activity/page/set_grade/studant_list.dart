@@ -1,15 +1,14 @@
 import 'package:modern_school_mobile/app/core/domain/entity/aluno_entity.dart';
-import 'package:modern_school_mobile/app/feature/activity/page/prof_page_016/card_tela_016.dart';
+import 'package:modern_school_mobile/app/feature/activity/page/set_grade/card_student_widget.dart';
 
-class ControllerTela016 {
-  //changeNotFyer?
-  List<CardTela016> alunos = [];
+class StudentList {
+  List<CardStudentWidget> alunos = [];
 
-  ControllerTela016() {
-    pegarAlunosDaAPI();
+  StudentList() {
+    getStudentTestFromAPI();
   }
 
-  void pegarAlunosDaAPI() {
+  void getStudentTestFromAPI() {
     for (int i = 0; i < 5; i++) {
       AlunoEntity aluno = AlunoEntity(
         id: i,
@@ -17,8 +16,7 @@ class ControllerTela016 {
         nome: "MARIA MADALENA DE AMARAL $i",
         nota: double.parse("$i"),
       );
-      alunos.add(CardTela016(aluno: aluno));
+      alunos.add(CardStudentWidget(aluno: aluno));
     }
-    
   }
 }

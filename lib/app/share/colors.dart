@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 MaterialColor primaryColor = MaterialColor(0xFF0C326F, mapPrimaryColor);
 
 Map<int, Color> mapPrimaryColor = {
-  50: const Color.fromRGBO (12, 50, 111, .1),
+  50: const Color.fromRGBO(12, 50, 111, .1),
   100: const Color.fromRGBO(12, 50, 111, .2),
   200: const Color.fromRGBO(12, 50, 111, .3),
   300: const Color.fromRGBO(12, 50, 111, .4),
@@ -15,3 +15,5 @@ Map<int, Color> mapPrimaryColor = {
   900: const Color.fromRGBO(12, 50, 111, 1),
 };
 
+Color textGradeColor = const Color(0xFF1351B4);
+Color backGroundGradeColor = const Color(0xFFB8D1F7);

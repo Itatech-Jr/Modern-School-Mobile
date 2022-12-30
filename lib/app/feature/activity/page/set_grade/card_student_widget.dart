@@ -4,15 +4,15 @@ import 'package:modern_school_mobile/app/core/domain/entity/aluno_entity.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/field_widget.dart';
 import 'package:modern_school_mobile/app/share/text_style.dart';
 
-class CardTela016 extends StatefulWidget {
-  const CardTela016({super.key,required this.aluno});
+class CardStudentWidget extends StatefulWidget {
+  const CardStudentWidget({super.key, required this.aluno});
   final AlunoEntity aluno;
 
   @override
-  State<CardTela016> createState() => _CardTela016State();
+  State<CardStudentWidget> createState() => _CardStudentWidgetState();
 }
 
-class _CardTela016State extends State<CardTela016> {
+class _CardStudentWidgetState extends State<CardStudentWidget> {
   TextEditingController controller = TextEditingController();
   String oldString = "";
   void inputFormatterAllow(String? value) {
@@ -69,11 +69,12 @@ class _CardTela016State extends State<CardTela016> {
               child: Text(
                 widget.aluno.matricula,
                 textAlign: TextAlign.center,
+                overflow: TextOverflow.fade,
                 style: primaryTextStyle,
               ),
             ),
             SizedBox(
-              width: size.width * 0.45,
+              width: size.width * 0.42,
               child: Text(
                 widget.aluno.nome,
                 textAlign: TextAlign.center,
@@ -82,7 +83,7 @@ class _CardTela016State extends State<CardTela016> {
               ),
             ),
             SizedBox(
-                width: size.width * 0.12,
+                width: size.width * 0.14,
                 child: fieldWidget(
                   child: TextFormField(
                     controller: controller,

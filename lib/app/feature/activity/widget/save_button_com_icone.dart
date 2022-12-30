@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SaveButtonComIcone extends StatefulWidget {
-  const SaveButtonComIcone({super.key});
+class SaveButtonWithIcone extends StatefulWidget {
+  const SaveButtonWithIcone({super.key});
 
   @override
-  State<SaveButtonComIcone> createState() => Save();
+  State<SaveButtonWithIcone> createState() => Save();
 }
 
-class Save extends State<SaveButtonComIcone> {
+class Save extends State<SaveButtonWithIcone> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
