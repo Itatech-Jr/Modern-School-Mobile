@@ -1,8 +1,8 @@
 import 'package:modern_school_mobile/app/core/domain/entity/aluno_entity.dart';
-import 'package:modern_school_mobile/app/feature/activity/page/set_grade/card_student_widget.dart';
+import 'package:modern_school_mobile/app/feature/activity/page/set_grade/student_card.dart';
 
 class StudentList {
-  List<CardStudentWidget> alunos = [];
+  List<StudentCard> alunos = [];
 
   StudentList() {
     getStudentTestFromAPI();
@@ -16,7 +16,7 @@ class StudentList {
         nome: "MARIA MADALENA DE AMARAL $i",
         nota: double.parse("$i"),
       );
-      alunos.add(CardStudentWidget(aluno: aluno));
+      alunos.add(StudentCard(aluno: aluno));
     }
   }
 }

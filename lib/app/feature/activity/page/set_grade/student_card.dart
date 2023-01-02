@@ -4,15 +4,15 @@ import 'package:modern_school_mobile/app/core/domain/entity/aluno_entity.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/field_widget.dart';
 import 'package:modern_school_mobile/app/share/text_style.dart';
 
-class CardStudentWidget extends StatefulWidget {
-  const CardStudentWidget({super.key, required this.aluno});
+class StudentCard extends StatefulWidget {
+  const StudentCard({super.key, required this.aluno});
   final AlunoEntity aluno;
 
   @override
-  State<CardStudentWidget> createState() => _CardStudentWidgetState();
+  State<StudentCard> createState() => _StudentCardState();
 }
 
-class _CardStudentWidgetState extends State<CardStudentWidget> {
+class _StudentCardState extends State<StudentCard> {
   TextEditingController controller = TextEditingController();
   String oldString = "";
   void inputFormatterAllow(String? value) {
@@ -83,25 +83,26 @@ class _CardStudentWidgetState extends State<CardStudentWidget> {
               ),
             ),
             SizedBox(
-                width: size.width * 0.14,
-                child: fieldWidget(
-                  child: TextFormField(
-                    controller: controller,
-                    onChanged: inputFormatterAllow,
-                    maxLength: 3,
-                    inputFormatters: [
-                      FilteringTextInputFormatter.allow(
-                        RegExp('[0-9.]'),
-                      ),
-                    ],
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      isCollapsed: true,
-                      filled: false,
-                      counterText: "",
+              width: size.width * 0.14,
+              child: fieldWidget(
+                child: TextFormField(
+                  controller: controller,
+                  onChanged: inputFormatterAllow,
+                  maxLength: 3,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(
+                      RegExp('[0-9.]'),
                     ),
+                  ],
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    isCollapsed: true,
+                    filled: false,
+                    counterText: "",
                   ),
-                )),
+                ),
+              ),
+            ),
           ],
         ),
       ),
