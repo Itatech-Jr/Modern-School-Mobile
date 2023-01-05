@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/create_activity/form_field_widget.dart';
 import 'package:modern_school_mobile/app/share/text_style.dart';
 
-Widget dateWithTime(
+
+Widget dateWithTimeWidget(
     {required String dataTimeField,
     required String time,
     required Size size,
