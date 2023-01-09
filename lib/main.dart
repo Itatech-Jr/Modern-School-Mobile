@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modern_school_mobile/app/core/domain/entity/download_material_entity.dart';
 import 'app/share/widgets/appbar_widget.dart';
-
+import 'app/feature/teacher/page/keepCommunication.dart';
 //arch: https://medium.com/ruangguru/an-introduction-to-flutter-clean-architecture-ae00154001b0
 
 void main() {
@@ -30,16 +30,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  DownloadMaterialEntity entity =
-      const DownloadMaterialEntity(titulo: 'Estudo do livro “A Moreninha  de  Joaquin Manuel de Macedo” - [21/05/2022]', nomeArquivo: "nome_do_arquivo.pdf", linkArquvo: "", statusAluno: "Presente");
+  DownloadMaterialEntity entity = const DownloadMaterialEntity(
+      titulo:
+          'Estudo do livro “A Moreninha  de  Joaquin Manuel de Macedo” - [21/05/2022]',
+      nomeArquivo: "nome_do_arquivo.pdf",
+      linkArquvo: "",
+      statusAluno: "Presente");
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: const Drawer(),
-        appBar: appbarWidget(),
-
+        body: keepComunication(),
+        // drawer: const Drawer(),
+        // appBar: appbarWidget(),
       ),
     );
   }
