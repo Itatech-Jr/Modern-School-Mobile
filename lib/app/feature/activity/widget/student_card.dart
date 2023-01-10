@@ -1,51 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:modern_school_mobile/app/core/domain/entity/aluno_entity.dart';
+import 'package:modern_school_mobile/app/feature/activity/widget/student_card_components.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/field_widget.dart';
 import 'package:modern_school_mobile/app/share/text_style.dart';
 
-class StudentCard extends StatefulWidget {
-  const StudentCard({super.key, required this.aluno});
+class StudentCard extends StatelessWidget {
+  const StudentCard({super.key, required this.aluno, required this.components});
   final AlunoEntity aluno;
-
-  @override
-  State<StudentCard> createState() => _StudentCardState();
-}
-
-class _StudentCardState extends State<StudentCard> {
-  TextEditingController controller = TextEditingController();
-  String oldString = "";
-  void inputFormatterAllow(String? value) {
-    if (value != null && value.isNotEmpty) {
-      List<String> char = value.characters.toList();
-
-      if (char[0] == '.') {
-        controller.text = oldString;
-        return;
-      }
-
-      if (value.length > 1 && char[0] == '0' && char[1] != '.' ||
-          value.length > 2 && char[2] == '.') {
-        controller.text = oldString;
-        return;
-      }
-
-      for (int i = 0, cont = 0; i < value.length; i++) {
-        if (char[i] == ".") cont++;
-        if (cont > 1) {
-          controller.text = oldString;
-          return;
-        }
-      }
-      if (double.parse(value) > 10) {
-        controller.text = oldString;
-        return;
-      }
-      oldString = value;
-    } else {
-      oldString = "";
-    }
-  }
+  final StudentCardComponents components;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +22,7 @@ class _StudentCardState extends State<StudentCard> {
           children: [
             SizedBox(
               child: Text(
-                "${widget.aluno.id}",
+                "${aluno.id}",
                 textAlign: TextAlign.center,
                 style: primaryTextStyle,
               ),
@@ -67,7 +30,7 @@ class _StudentCardState extends State<StudentCard> {
             SizedBox(
               width: size.width * 0.25,
               child: Text(
-                widget.aluno.matricula,
+                aluno.matricula,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.fade,
                 style: primaryTextStyle,
@@ -76,7 +39,7 @@ class _StudentCardState extends State<StudentCard> {
             SizedBox(
               width: size.width * 0.42,
               child: Text(
-                widget.aluno.nome,
+                aluno.nome,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.fade,
                 style: primaryTextStyle,
@@ -86,8 +49,8 @@ class _StudentCardState extends State<StudentCard> {
               width: size.width * 0.14,
               child: fieldWidget(
                 child: TextFormField(
-                  controller: controller,
-                  onChanged: inputFormatterAllow,
+                  controller: components.controller,
+                  onChanged: components.inputFormatterAllow,
                   maxLength: 3,
                   inputFormatters: [
                     FilteringTextInputFormatter.allow(

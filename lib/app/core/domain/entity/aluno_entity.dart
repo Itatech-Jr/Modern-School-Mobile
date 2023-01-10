@@ -16,11 +16,12 @@ class AlunoEntity {
       nome: json["nome"],
       nota: double.parse(json["nota"]));
 
-  Map<String, dynamic> toJson() => {
-    "id":id,
-    "matricula":matricula,
-    "nome":nome,
-    "nota":nota
-  };
+  Map<String, dynamic> toJson() =>
+      {"id": id, "matricula": matricula, "nome": nome, "nota": nota};
 
+  AlunoEntity copyWith({int? id, String? matricula, String? nome, double? nota}) => AlunoEntity(
+    id: id ?? this.id,
+    matricula: matricula ?? this.matricula,
+    nome: nome ?? this.nome,
+    nota: nota ?? this.nota);
 }

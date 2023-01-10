@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:modern_school_mobile/app/share/colors.dart';
 import 'package:modern_school_mobile/app/share/text_style.dart';
 
 Widget blueCard(Size size){
-  return SizedBox(
+  return  SizedBox(
     height: 80,
     child: Card(
-      color: backGroundGradeColor,
+      color: const Color(0xFFB8D1F7),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -14,7 +13,7 @@ Widget blueCard(Size size){
             child: Text(
               "Nº",
               textAlign: TextAlign.center,
-              style: primaryTextStyle.copyWith(color: textGradeColor),
+              style: primaryTextStyle.copyWith(color: const Color(0xFF1351B4)),
             ),
           ),
           SizedBox(
@@ -22,7 +21,7 @@ Widget blueCard(Size size){
             child: Text(
               "Matrícula",
               textAlign: TextAlign.center,
-              style: primaryTextStyle.copyWith(color: textGradeColor),
+              style: primaryTextStyle.copyWith(color: const Color(0xFF1351B4)),
             ),
           ),
           SizedBox(
@@ -31,7 +30,7 @@ Widget blueCard(Size size){
               "Nome",
               textAlign: TextAlign.center,
               overflow: TextOverflow.fade,
-              style: primaryTextStyle.copyWith(color: textGradeColor),
+              style: primaryTextStyle.copyWith(color: const Color(0xFF1351B4)),
             ),
           ),
           SizedBox(
@@ -39,7 +38,7 @@ Widget blueCard(Size size){
             child: Text(
               "Notas",
               textAlign: TextAlign.center,
-              style: primaryTextStyle.copyWith(color: textGradeColor),
+              style: primaryTextStyle.copyWith(color: const Color(0xFF1351B4)),
             ),
           ),
         ],

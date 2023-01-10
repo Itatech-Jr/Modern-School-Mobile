@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget saveButtonWithIcone({required VoidCallback onPressed}) {
+Widget saveButtonWithIcone({VoidCallback? onPressed}) {
   return SizedBox(
     width: 100,
     child: TextButton(
