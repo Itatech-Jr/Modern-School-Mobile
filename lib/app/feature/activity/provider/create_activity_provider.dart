@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CreateActivityController extends ChangeNotifier {
+class CreateActivityProvider extends ChangeNotifier {
   String dataTimeField = "00/00/0000";
   String time = "00:00";
   bool checkedBox = false;
@@ -16,6 +16,10 @@ class CreateActivityController extends ChangeNotifier {
       dataTimeField = "${novaData.day}/${novaData.month}/${novaData.year}";
       notifyListeners();
     }
+  }
+
+  void justNotifier() {
+    notifyListeners();
   }
 
   String getPickedTime(TimeOfDay pickedTime, BuildContext context) {

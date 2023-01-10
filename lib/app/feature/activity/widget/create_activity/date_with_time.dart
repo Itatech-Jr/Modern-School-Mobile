@@ -10,51 +10,43 @@ Widget dateWithTimeWidget(
     required VoidCallback onTapDate,
     required VoidCallback onTapTime}) {
   return Padding(
-    padding: const EdgeInsets.only(top: 15),
+    padding: const EdgeInsets.only(left: 15,right: 15,top: 10,bottom: 10),
     child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(
-          width: size.width * 0.90,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              formFieldWidget(
-                width: 130,
-                title: "Data de entrega:",
-                child: InkWell(
-                  onTap: onTapDate,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(dataTimeField, style: secondaryTextStyle),
-                      const Icon(
-                        Icons.calendar_month_sharp,
-                        color: Color(0xFF1351b4),
-                      ),
-                    ],
-                  ),
+        formFieldWidget(
+          width: 130,
+          title: "Data de entrega:",
+          child: InkWell(
+            onTap: onTapDate,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(dataTimeField, style: secondaryTextStyle),
+                const Icon(
+                  Icons.calendar_month_sharp,
+                  color: Color(0xFF1351b4),
                 ),
-              ),
-              formFieldWidget(
-                width: 120,
-                title: "Horário de entrega:",
-                child: GestureDetector(
-                  behavior: HitTestBehavior.translucent,
-                  onTap: onTapTime,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(time, style: secondaryTextStyle),
-                      const Icon(
-                        Icons.access_time_filled,
-                        color: Color(0xFF1351b4),
-                      ),
-                    ],
-                  ),
+              ],
+            ),
+          ),
+        ),
+        formFieldWidget(
+          width: 120,
+          title: "Horário de entrega:",
+          child: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: onTapTime,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(time, style: secondaryTextStyle),
+                const Icon(
+                  Icons.access_time_filled,
+                  color: Color(0xFF1351b4),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

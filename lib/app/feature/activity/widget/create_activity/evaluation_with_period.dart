@@ -4,56 +4,48 @@ import '../../../../share/text_style.dart';
 
 Widget evaluationWithPeriod({required Size size, required Checkbox checkbox}) {
   return Padding(
-    padding: const EdgeInsets.only(top: 15),
+    padding: const EdgeInsets.only(left: 15,right: 15,top: 10,bottom: 10),
     child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        formFieldWidget(
+          width: size.width * 0.6,
+          title: "Período:",
+          child: TextFormField(
+            style: primaryTextStyle,
+            initialValue: "Substituir pelo widget",
+            decoration: const InputDecoration(
+              isCollapsed: true,
+              border: InputBorder.none,
+              filled: false,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 10,
+        ),
         SizedBox(
-          width: size.width * 0.90,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+          width: size.width * 0.25,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              formFieldWidget(
-                width: size.width * 0.6,
-                title: "Período:",
-                child: TextFormField(
-                  style: primaryTextStyle,
-                  initialValue: "Substituir pelo widget",
-                  decoration: const InputDecoration(
-                    isCollapsed: true,
-                    border: InputBorder.none,
-                    filled: false,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              SizedBox(
-                width: size.width * 0.25,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Text(
-                            "Avaliativo:",
-                            style: primaryTextStyle,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 7,
-                        ),
-                        SizedBox(
-                          width: 40,
-                          child: checkbox,
-                        ),
-                      ],
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    child: Text(
+                      "Avaliativo:",
+                      style: primaryTextStyle,
                     ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  SizedBox(
+                    width: 40,
+                    child: checkbox,
+                  ),
+                ],
               ),
             ],
           ),

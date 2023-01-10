@@ -4,23 +4,17 @@ import '../../../../share/text_style.dart';
 
 Widget uploadFile({required Size size}) {
   return Padding(
-    padding: const EdgeInsets.only(top: 15),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        formFieldWidget(
-          width: size.width * 0.9,
-          title: "Envio de arquivos:",
-          child: TextFormField(
-            style: primaryTextStyle,
-            initialValue: "Substituir pelo widget",
-            decoration: const InputDecoration(
-              border: InputBorder.none,
-              isCollapsed: true,
-            ),
-          ),
+    padding: const EdgeInsets.only(left: 15,right: 15,top: 10,bottom: 10),
+    child: formFieldWidget(
+      title: "Envio de arquivos:",
+      child: TextFormField(
+        style: primaryTextStyle,
+        initialValue: "Substituir pelo widget",
+        decoration: const InputDecoration(
+          border: InputBorder.none,
+          isCollapsed: true,
         ),
-      ],
+      ),
     ),
   );
 }
