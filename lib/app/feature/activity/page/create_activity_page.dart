@@ -20,41 +20,43 @@ class CreateActivityPage extends StatelessWidget {
     return Scaffold(
       appBar: appbarWidget(),
       drawer: const Drawer(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            titleWidget(text: "TURMA 9º ANO A COMPONENTES: MATEMÁTICA"),
-            dateWithTimeWidget(
-              dataTimeField: controller.dataTimeField,
-              time: controller.time,
+      body: Column(
+        children: [
+          titleWidget(text: "TURMA 9º ANO A COMPONENTES: MATEMÁTICA"),
+          dateWithTimeWidget(
+            dataTimeField: controller.dataTimeField,
+            time: controller.time,
+            size: size,
+            onTapDate: () async {
+              controller.onTapDate(context);
+            },
+            onTapTime: () async {
+              controller.onTapTime(context);
+            },
+          ),
+          activeTypeWithWeight(size: size),
+          evaluationWithPeriod(
+            size: size,
+            checkbox: controller.checkBoxWidget(),
+          ),
+          uploadFile(
               size: size,
-              onTapDate: () async {
-                controller.onTapDate(context);
-              },
-              onTapTime: () async {
-                controller.onTapTime(context);
-              },
+              file: controller.getFiles,
+              title: controller.files != null
+                  ? "Arquivos adicionado com sucesso!"
+                  : "Selecione o(s) arquivo(s)"),
+          description(size),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                buttonWidget(text: "Voltar"),
+                buttonWidget(
+                    text: "Confirmar", backgroundColor: Colors.white),
+              ],
             ),
-            activeTypeWithWeight(size: size),
-            evaluationWithPeriod(
-              size: size,
-              checkbox: controller.checkBoxWidget(),
-            ),
-            uploadFile(size: size),
-            description(size),
-            Padding(
-              padding: const EdgeInsets.only(top: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  buttonWidget(text: "Voltar"),
-                  buttonWidget(
-                      text: "Confirmar", backgroundColor: Colors.white),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

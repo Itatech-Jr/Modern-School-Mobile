@@ -1,9 +1,12 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 
 class CreateActivityProvider extends ChangeNotifier {
   String dataTimeField = "00/00/0000";
   String time = "00:00";
   bool checkedBox = false;
+  List<File>? files;
 
   //funcao da: Data de entrega: calendary
   void onTapDate(BuildContext context) async {
@@ -16,10 +19,6 @@ class CreateActivityProvider extends ChangeNotifier {
       dataTimeField = "${novaData.day}/${novaData.month}/${novaData.year}";
       notifyListeners();
     }
-  }
-
-  void justNotifier() {
-    notifyListeners();
   }
 
   String getPickedTime(TimeOfDay pickedTime, BuildContext context) {
@@ -39,6 +38,18 @@ class CreateActivityProvider extends ChangeNotifier {
     }
   }
 
+  void getFiles() async {
+    FilePickerResult? resul =
+        await FilePicker.platform.pickFiles(allowMultiple: true);
+    if (resul != null) {
+      files = resul.paths.map((e) => File(e!)).toList();
+    } else {
+      //cancelou
+      files = null;
+    }
+    notifyListeners();
+  }
+
   Checkbox checkBoxWidget() {
     return Checkbox(
       value: checkedBox,
@@ -47,5 +58,9 @@ class CreateActivityProvider extends ChangeNotifier {
         notifyListeners();
       },
     );
+  }
+
+  void justNorifier() {
+    notifyListeners();
   }
 }
