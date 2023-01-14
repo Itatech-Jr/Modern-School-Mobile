@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modern_school_mobile/app/feature/activity/widget/blue_card.dart';
+import 'package:modern_school_mobile/app/feature/activity/widget/set_grade_initial_card.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/studant_list.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/save_button_with_icon.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/appbar_widget.dart';
@@ -24,22 +24,23 @@ class SetGradePage extends StatelessWidget {
               titleWidget(
                 text: "TURMA 9º ANO A COMPONENTES: MATEMÁTICA",
               ),
-              blueCard(size),
-      
-              Column(children: studentList.alunos),
-              
-              saveButtonWithIcone(onPressed: () {
+              setGradeInitialCard(size),
+              Column(children: studentList.studants),
+              saveButtonWithIcon(onPressed: () {
                 debugPrint("Queijo ralado");
               }),
               Padding(
                 padding: const EdgeInsets.only(top: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    buttonWidget(text: "Voltar"),
-                    buttonWidget(
-                        text: "Confirmar", backgroundColor: Colors.white),
-                  ],
+                child: SizedBox(
+                  width: 250,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      buttonWidget(text: "Voltar"),
+                      buttonWidget(
+                          text: "Confirmar", backgroundColor: Colors.white),
+                    ],
+                  ),
                 ),
               ),
             ],

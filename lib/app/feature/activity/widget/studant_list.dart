@@ -1,9 +1,9 @@
 import 'package:modern_school_mobile/app/core/domain/entity/aluno_entity.dart';
-import 'package:modern_school_mobile/app/feature/activity/widget/student_card.dart';
+import 'package:modern_school_mobile/app/feature/activity/widget/set_grade_student_card.dart';
 import 'package:modern_school_mobile/app/feature/activity/widget/student_card_components.dart';
 
 class StudentList {
-  List<StudentCard> alunos = [];
+  List<SetGradeStudentCard> studants = [];
 
   StudentList() {
     getStudentTestFromAPI();
@@ -27,8 +27,8 @@ class StudentList {
       studant.controller.text = aluno.nota.toStringAsFixed(fixDecimal);
       studant.oldString = aluno.nota.toStringAsFixed(fixDecimal);
 
-      alunos.add(StudentCard(
-        aluno: aluno,
+      studants.add(SetGradeStudentCard(
+        student: aluno,
         components: studant,
       ));
     }

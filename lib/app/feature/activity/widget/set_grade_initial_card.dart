@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:modern_school_mobile/app/share/text_style.dart';
 
-Widget blueCard(Size size){
-  return  SizedBox(
+Widget setGradeInitialCard(Size size) {
+  return SizedBox(
     height: 80,
     child: Card(
       color: const Color(0xFFB8D1F7),
@@ -34,7 +34,7 @@ Widget blueCard(Size size){
             ),
           ),
           SizedBox(
-            width: size.width * 0.14,
+            width: 50,
             child: Text(
               "Notas",
               textAlign: TextAlign.center,

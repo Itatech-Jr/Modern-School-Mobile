@@ -5,16 +5,16 @@ import 'package:modern_school_mobile/app/feature/activity/widget/student_card_co
 import 'package:modern_school_mobile/app/feature/activity/widget/field_widget.dart';
 import 'package:modern_school_mobile/app/share/text_style.dart';
 
-class StudentCard extends StatelessWidget {
-  const StudentCard({super.key, required this.aluno, required this.components});
-  final AlunoEntity aluno;
+class SetGradeStudentCard extends StatelessWidget {
+  const SetGradeStudentCard(
+      {super.key, required this.student, required this.components});
+  final AlunoEntity student;
   final StudentCardComponents components;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SizedBox(
-      width: double.infinity,
       height: 80,
       child: Card(
         child: Row(
@@ -22,7 +22,7 @@ class StudentCard extends StatelessWidget {
           children: [
             SizedBox(
               child: Text(
-                "${aluno.id}",
+                "${student.id}",
                 textAlign: TextAlign.center,
                 style: primaryTextStyle,
               ),
@@ -30,7 +30,7 @@ class StudentCard extends StatelessWidget {
             SizedBox(
               width: size.width * 0.25,
               child: Text(
-                aluno.matricula,
+                student.matricula,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.fade,
                 style: primaryTextStyle,
@@ -39,16 +39,17 @@ class StudentCard extends StatelessWidget {
             SizedBox(
               width: size.width * 0.42,
               child: Text(
-                aluno.nome,
+                student.nome,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.fade,
                 style: primaryTextStyle,
               ),
             ),
             SizedBox(
-              width: size.width * 0.14,
+              width: 50,
               child: fieldWidget(
                 child: TextFormField(
+                  style: primaryTextStyle,
                   controller: components.controller,
                   onChanged: components.inputFormatterAllow,
                   maxLength: 3,
