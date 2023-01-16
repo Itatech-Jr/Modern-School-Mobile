@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modern_school_mobile/app/core/domain/entity/download_material_entity.dart';
 import 'app/share/widgets/appbar_widget.dart';
-import 'app/feature/teacher/page/keepCommunication.dart';
+import 'app/feature/teacher/page/keep_communication.dart';
 //arch: https://medium.com/ruangguru/an-introduction-to-flutter-clean-architecture-ae00154001b0
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Modern School',
       theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Raleway'),
-      home: const Home(),
+      home: keepComunication(),
     );
   }
 }
@@ -41,9 +41,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: keepComunication(),
-        // drawer: const Drawer(),
-        // appBar: appbarWidget(),
+        drawer: const Drawer(),
+        appBar: appbarWidget(),
       ),
     );
   }
