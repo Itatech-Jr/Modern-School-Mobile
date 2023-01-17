@@ -24,8 +24,8 @@ Widget evaluationWithPeriod({required Size size, required Checkbox checkbox}) {
         const SizedBox(
           width: 10,
         ),
-        SizedBox(
-          width: size.width * 0.25,
+        Container(
+          color: Colors.green,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -38,13 +38,7 @@ Widget evaluationWithPeriod({required Size size, required Checkbox checkbox}) {
                       style: primaryTextStyle,
                     ),
                   ),
-                  const SizedBox(
-                    height: 7,
-                  ),
-                  SizedBox(
-                    width: 40,
-                    child: checkbox,
-                  ),
+                  checkbox,
                 ],
               ),
             ],
